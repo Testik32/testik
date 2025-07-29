@@ -121,10 +121,69 @@ document.addEventListener('DOMContentLoaded', () => {
       container.classList.add('active');
     }
   });
+
+
+
 });
 
 
-document.querySelector('.submit-btn').addEventListener('click', async () => {
+
+
+document.querySelector('.reg-btn-form').addEventListener('click', () => {
+  const currentContainer = document.querySelector('.answ4');
+  const nextContainerTeam = document.querySelector('.form-team');
+  const nextContainerSolo = document.querySelector('.form-solo');
+
+  // Проверяем, что выбрал пользователь
+  const progress = document.querySelector('.prog-line-in');
+  const currentWidth = parseInt(progress.style.width) || 0;
+  const isTeamSelected = document.querySelector('.team-check:checked');
+  const isSoloSelected = document.querySelector('.solo-check:checked');
+
+  if (isTeamSelected) {
+    currentContainer.classList.remove('active');
+    nextContainerTeam.classList.add('active');
+    progress.style.width = `${currentWidth + 19.3125}%`;
+  } else if (isSoloSelected) {
+    currentContainer.classList.remove('active');
+    nextContainerSolo.classList.add('active');
+    progress.style.width = `${currentWidth + 19.3125}%`;
+  }
+});
+
+
+
+document.querySelector('.submit-btn').addEventListener('click', async (event) => {
+
+  event.preventDefault(); // Предотвращаем стандартное поведение кнопки
+
+  const formTeam = document.querySelector('.form-team');
+  const requiredFields = formTeam.querySelectorAll('[required]');
+  let allFieldsFilled = true;
+
+  // Проверяем, что все поля заполнены
+  requiredFields.forEach((field) => {
+    if (!field.value.trim()) {
+      allFieldsFilled = false;
+      field.classList.add('error'); // Добавляем класс для визуального отображения ошибки
+    } else {
+      field.classList.remove('error'); // Убираем класс ошибки, если поле заполнено
+    }
+  });
+
+  if (!allFieldsFilled) {
+
+    return;
+  }
+
+
+
+
+
+
+
+
+
   const ads = Array.from(document.querySelectorAll('input[name="ads"]:checked')).map(input => input.value);
   const data = {
     ads: ads.join(', '), // Собираем все выбранные значения в строку, разделенную запятыми
@@ -148,12 +207,103 @@ document.querySelector('.submit-btn').addEventListener('click', async () => {
 
     const result = await response.json();
     if (result.status === 'success') {
-      alert('Данные успешно отправлены!');
+      formTeam.style.display='none';
+      document.querySelector('.q-last').style.display='flex';
+      document.querySelector('.q-top').style.display = 'none';
+      console.log('Данные успешно отправлены!');
     } else {
-      alert('Ошибка при отправке данных.');
+      console.log('Ошибка при отправке данных.');
     }
   } catch (error) {
     console.error(error);
-    alert('Ошибка соединения с сервером.');
+    console.log('Ошибка соединения с сервером.');
   }
+});
+
+
+
+
+
+
+
+
+
+document.querySelector('.submit-btn-solo').addEventListener('click', async (event) => {
+  event.preventDefault(); // Предотвращаем стандартное поведение кнопки
+
+  const formSolo = document.querySelector('.form-solo');
+  const requiredFields = formSolo.querySelectorAll('[required]');
+  let allFieldsFilled = true;
+
+  // Проверяем, что все поля заполнены
+  requiredFields.forEach((field) => {
+    if (!field.value.trim()) {
+      allFieldsFilled = false;
+      field.classList.add('error'); // Добавляем класс для визуального отображения ошибки
+    } else {
+      field.classList.remove('error'); // Убираем класс ошибки, если поле заполнено
+    }
+  });
+
+  if (!allFieldsFilled) {
+   
+    return;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  const ads = Array.from(document.querySelectorAll('input[name="ads"]:checked')).map(input => input.value);
+  const data = {
+    ads: ads.join(', '), // Собираем все выбранные значения в строку, разделенную запятыми
+    rash: document.querySelector('input[name="rash"]:checked')?.value || '',
+    teamOrSolo: document.querySelector('input[name="teamOrSolo"]:checked')?.value || '',
+    howKnown: document.querySelector('input[name="howKnown"]:checked')?.value || '',
+    nameMember: document.querySelector('input[name="nameMember-solo"]')?.value || '',
+    tg: document.querySelector('input[name="telegram-solo"]')?.value || '',
+
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    if (result.status === 'success') {
+      console.log('Данные успешно отправлены!');
+      formSolo.style.display = 'none';
+      document.querySelector('.q-last').style.display = 'flex';
+      document.querySelector('.q-top').style.display = 'none';
+    } else {
+      console.log('Ошибка при отправке данных.');
+    }
+  } catch (error) {
+    console.error(error);
+    console.log('Ошибка соединения с сервером.');
+  }
+});
+
+document.querySelectorAll('.q-inp-field').forEach((input) => {
+  input.addEventListener('input', () => {
+    const parent = input.closest('.q-inp');
+
+    // Проверяем, проходит ли значение валидацию
+    if (input.checkValidity()) {
+     input.classList.add('success'); // Добавляем класс success
+      input.classList.remove('error'); // Убираем класс error, если он был
+    } else {
+      input.classList.remove('success'); // Убираем класс success
+      input.classList.add('error'); // Добавляем класс error
+    }
+  });
 });

@@ -1821,6 +1821,12 @@ footer {
   gap: 4px;
 }
 
+.reg-btn-form {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 
 .q-form {
   display: none;
@@ -1898,9 +1904,7 @@ footer {
   width: 100%;
 }
 
-.q-inp input:focus {
-  border: #41B856 1.5px solid;
-}
+
 
 .q-subtitle {
   font-size: 16px;
@@ -1912,6 +1916,51 @@ footer {
   line-height: 161%;
 }
 
+
+.success {
+  border: #41B856 1.5px solid !important;
+}
+
+.error {
+  border: 1px solid red !important;
+}
+
+.q-last {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.q-last h2 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+}
+
+.q-last p {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.loading-spinner {
+  animation: loading-spinner 1.5s linear infinite
+}
+
+
+
+@keyframes loading-spinner {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
 
 
 @media(min-width:1300px) {

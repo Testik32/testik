@@ -37,7 +37,7 @@
 
       </header>
 
-      <form class="qusestions">
+      <div class="qusestions">
         <div class="container">
           <div class="q-inner">
 
@@ -628,7 +628,7 @@
                   Назад
 
                 </button>
-                <button disabled class="btn black-btn reg-btn-next " type="button">
+                <button class="btn black-btn reg-btn-form  " type="button">
                   Далее <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15 6H1" stroke="white" stroke-width="1.5" stroke-linecap="round"
                       stroke-linejoin="round" />
@@ -643,7 +643,7 @@
 
             </div>
 
-            <div class="q-answers answ5 q-form form-team" data-answ="5">
+            <form class="q-answers answ5 q-form form-team" data-answ="5">
               <div class="q-inp w-50">
                 <span class="q-inp-label">
                   Название команды*
@@ -654,7 +654,7 @@
                 <span class="q-inp-label">
                   Численность*
                 </span>
-                <input type="text" placeholder="Сколько у вас сотрудников?" name="countNumber" required
+                <input type="number" placeholder="Сколько у вас сотрудников?" name="countNumber" required
                   class="q-inp-field">
               </div>
               <div class="q-inp w-50">
@@ -675,21 +675,65 @@
                 </span>
                 <input type="text" placeholder="@ivan_owner" name="telegram" required class="q-inp-field">
               </div>
-             <div class="form__bot">
-                <button type="button" class="form-btn  btn black-btn w-100 submit-btn">
+              <div class="form__bot">
+                <button type="submit" class="form-btn  btn black-btn w-100 submit-btn">
                   Зарегаться
                 </button>
                 <p class="form-aftertxt">
                   Нажимая кнопку «Зарегаться», вы соглашаетесь с Условиями использования и Политикой конфиденциальности
                 </p>
-             </div>
-            </div>
+              </div>
+            </form>
 
+            <form class="q-answers answ6 q-form form-solo" data-answ="6">
+
+              <div class="q-inp w-100">
+                <span class="q-inp-label">
+                  Ваше имя*
+                </span>
+                <input type="text" placeholder="Иван" name="nameMember-solo" required class="q-inp-field">
+              </div>
+
+              <div class="q-inp w-100">
+                <span class="q-inp-label">
+                  Ваш Telegram*
+                </span>
+                <input type="text" placeholder="@ivan_owner" name="telegram-solo" required class="q-inp-field">
+              </div>
+              <div class="form__bot">
+                <button type="submit" class="form-btn  btn black-btn w-100 submit-btn-solo">
+                  Зарегаться
+                </button>
+                <p class="form-aftertxt">
+                  Нажимая кнопку «Зарегаться», вы соглашаетесь с Условиями использования и Политикой конфиденциальности
+                </p>
+              </div>
+            </form>
+
+            <div class="q-last">
+          <svg class="loading-spinner" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 48 48">
+            <g fill="none">
+              <path id="track" fill="rgba(28, 28, 28, 0.03)"
+                d="M24,48 C10.745166,48 0,37.254834 0,24 C0,10.745166 10.745166,0 24,0 C37.254834,0 48,10.745166 48,24 C48,37.254834 37.254834,48 24,48 Z M24,44 C35.045695,44 44,35.045695 44,24 C44,12.954305 35.045695,4 24,4 C12.954305,4 4,12.954305 4,24 C4,35.045695 12.954305,44 24,44 Z" />
+              <path id="section" fill="rgba(131, 218, 78, 1)"
+                d="M24,0 C37.254834,0 48,10.745166 48,24 L44,24 C44,12.954305 35.045695,4 24,4 L24,0 Z" />
+            </g>
+          </svg>
+         
+              <h2>
+                Заявка на рассмотрении
+              </h2>
+              <p>
+                Наш менеджер <a href="https://t.me/fbm_ivan" target="_blank" class="green-txt">@fbm_ivan</a> свяжется с вами в Telegram в ближайшее время
+              </p>
+              <a href="index.html" class="btn black-btn">На главную</a>
+
+            </div>
 
 
           </div>
         </div>
-      </form>
+      </div>
 
 
 
