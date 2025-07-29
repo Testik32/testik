@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     2: 'Какой у вас ежемесячный расход на рекламу?',
     3: 'Вы команда или соло?',
     4: 'Как вы узнали про нас?',
-    5: 'Давайте знакомиться'
+    5: 'Давайте знакомиться <br> <span class="q-subtitle"> Расскажите о себе и наш менеджер свяжется с вами для подтверждения регистрации в течение 15 минут.</span>' 
+    
   };
 
   // Обработка кликов по q-answer
@@ -76,13 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const step = nextContainer.dataset.answ;
         const title = document.querySelector('.q-top-title');
         if (titles[step]) {
-          title.textContent = titles[step];
+          title.innerHTML = titles[step];
         }
 
         // Увеличиваем прогресс
         const progress = document.querySelector('.prog-line-in');
         const currentWidth = parseInt(progress.style.width) || 0;
-        progress.style.width = `${currentWidth + 18.75}%`;
+        progress.style.width = `${currentWidth + 19.3125}%`;
       }
     });
   });
@@ -107,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Уменьшаем прогресс
         const progress = document.querySelector('.prog-line-in');
         const currentWidth = parseInt(progress.style.width) || 0;
-        progress.style.width = `${currentWidth - 18.75}%`;
+        progress.style.width = `${currentWidth - 19.3125}%`;
       }
     });
   });
@@ -129,7 +130,13 @@ document.querySelector('.submit-btn').addEventListener('click', async () => {
     ads: ads.join(', '), // Собираем все выбранные значения в строку, разделенную запятыми
     rash: document.querySelector('input[name="rash"]:checked')?.value || '',
     teamOrSolo: document.querySelector('input[name="teamOrSolo"]:checked')?.value || '',
-    howKnown: document.querySelector('input[name="howKnown"]:checked')?.value || ''
+    howKnown: document.querySelector('input[name="howKnown"]:checked')?.value || '',
+    teamName: document.querySelector('input[name="teamName"]')?.value || '',
+    countNumber: document.querySelector('input[name="countNumber"]')?.value || '',
+    nameMember: document.querySelector('input[name="nameMember"]')?.value || '',
+    position: document.querySelector('input[name="position"]')?.value || '',
+    tg: document.querySelector('input[name="telegram"]')?.value || '',
+
   };
 
   try {

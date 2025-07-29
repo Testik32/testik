@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Обработка формы (POST-запрос)
 app.post('/submit', async (req, res) => {
-  const googleScriptURL = 'https://script.google.com/macros/s/AKfycbzXD8iG5WQjA0g4wAbrY5SJrmViKa6t6LhTuwadhQwMCm82StK5m7WT9mgsKyG-HzMO/exec';
+  const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyjaVCDhutvsVTVFOR7_gUpdQl1fiJhIQJQreVMW0gIXk5W94JODI5N_2id8ZsD59l6/exec';
 
   try {
     const response = await axios.post(googleScriptURL, req.body);
