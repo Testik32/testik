@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     2: 'Какой у вас ежемесячный расход на рекламу?',
     3: 'Вы команда или соло?',
     4: 'Как вы узнали про нас?',
-    5: 'Давайте знакомиться <br> <span class="q-subtitle"> Расскажите о себе и наш менеджер свяжется с вами для подтверждения регистрации в течение 15 минут.</span>' 
-    
+    5: 'Давайте знакомиться <br> <span class="q-subtitle"> Расскажите о себе и наш менеджер свяжется с вами для подтверждения регистрации в течение 15 минут.</span>' ,
+    6: 'Давайте знакомиться <br> <span class="q-subtitle"> Расскажите о себе и наш менеджер свяжется с вами для подтверждения регистрации в течение 15 минут.</span>'
   };
 
   // Обработка кликов по q-answer
@@ -199,7 +199,7 @@ document.querySelector('.submit-btn').addEventListener('click', async (event) =>
   };
 
   try {
-    const response = await fetch('http://localhost:3000/submit', {
+    const response = await fetch(`${window.location.origin}/submit`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -272,7 +272,7 @@ document.querySelector('.submit-btn-solo').addEventListener('click', async (even
   };
 
   try {
-    const response = await fetch('http://localhost:3000/submit', {
+    const response = await fetch(`${window.location.origin}/submit`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
