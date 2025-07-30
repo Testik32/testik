@@ -1986,6 +1986,9 @@ padding: 0 4px;
 
 
 @media(min-width:1300px) {
+  header{
+    zoom: 1.1;
+  }
   .hero {
     height: 114dvh;
     zoom: 1.1;
