@@ -176,6 +176,10 @@ document.querySelector('.submit-btn').addEventListener('click', async (event) =>
   if (!allFieldsFilled) {
 
     return;
+  }else{
+    document.querySelector('.loading-spin-form').style.display = 'block';
+    document.querySelector('.submt-txt').style.display = 'none';
+    document.querySelector('.submit-btn').disabled = true;
   }
 
 

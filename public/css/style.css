@@ -1964,6 +1964,11 @@ padding: 0 4px;
   animation: loading-spinner 1.5s linear infinite
 }
 
+.loading-spin-form {
+  display: none;
+  animation: loading-spinner 1.5s linear infinite
+}
+
 .footer__reg-r .lang__switch {
   margin-right: 0;
 }
