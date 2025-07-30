@@ -217,6 +217,9 @@ document.querySelector('.submit-btn').addEventListener('click', async (event) =>
       document.querySelector('.q-last').style.display = 'flex';
       document.querySelector('.q-top').style.display = 'none';
       console.log('Данные успешно отправлены!');
+      setTimeout(() => {
+        window.location = 'index.html'
+      }, 10000);
     } else {
       console.log('Ошибка при отправке данных.');
     }
