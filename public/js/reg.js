@@ -130,6 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.querySelector('.reg-btn-form').addEventListener('click', () => {
+
+
   const currentContainer = document.querySelector('.answ4');
   const nextContainerTeam = document.querySelector('.form-team');
   const nextContainerSolo = document.querySelector('.form-solo');
@@ -139,7 +141,7 @@ document.querySelector('.reg-btn-form').addEventListener('click', () => {
   const currentWidth = parseInt(progress.style.width) || 0;
   const isTeamSelected = document.querySelector('.team-check:checked');
   const isSoloSelected = document.querySelector('.solo-check:checked');
-
+  document.querySelector('.q-top-title').innerHTML = 'Давайте знакомиться <br> <span class="q-subtitle"> Расскажите о себе и наш менеджер свяжется с вами для подтверждения регистрации в течение 15 минут.</span>';
   if (isTeamSelected) {
     currentContainer.classList.remove('active');
     nextContainerTeam.classList.add('active');
