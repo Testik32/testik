@@ -1097,6 +1097,7 @@ header {
   display: flex;
   gap: 155px;
   position: relative;
+  justify-content: space-between;
   height: 632px;
 }
 
@@ -1507,8 +1508,8 @@ header {
 
 footer {
 
-  padding: 100px 0;
-  padding-top: 50px;
+  padding: 50px 0;
+ 
 }
 
 .footer__inner {
@@ -1878,7 +1879,7 @@ footer {
   top: -13%;
   left: 3%;
   background: white;
-
+padding: 0 4px;
 }
 
 .form-aftertxt {
@@ -1936,6 +1937,7 @@ footer {
   gap: 20px;
   align-items: center;
   justify-content: center;
+  margin-top: 10vh;
 }
 
 .q-last h2 {
@@ -1948,6 +1950,7 @@ footer {
 .q-last p {
   font-size: 18px;
   font-weight: 400;
+  margin-bottom: 12px;
   text-align: center;
 }
 
@@ -1960,6 +1963,11 @@ footer {
   display: none;
   animation: loading-spinner 1.5s linear infinite
 }
+
+.footer__reg-r .lang__switch {
+  margin-right: 0;
+}
+
 
 @keyframes loading-spinner {
   from {

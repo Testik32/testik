@@ -673,7 +673,9 @@
                 <span class="q-inp-label">
                   Ваш Telegram*
                 </span>
-                <input type="text" placeholder="@ivan_owner" name="telegram" required class="q-inp-field">
+                <input type="text" oninput=" this.value = this.value.replace(/[^@a-zA-Z0-9_]/g, '')"
+                  placeholder="@ivan_owner" name="telegram" required pattern="[@a-zA-Z0-9_]+" inputmode="latin"
+                  class="q-inp-field">
               </div>
               <div class="form__bot">
                 <button type="submit" class="form-btn  btn black-btn w-100 submit-btn">
@@ -698,12 +700,15 @@
                 <span class="q-inp-label">
                   Ваш Telegram*
                 </span>
-                <input type="text" placeholder="@ivan_owner" name="telegram-solo" required class="q-inp-field">
+                <input type="text" pattern="[@a-zA-Z0-9_]+"
+                  oninput=" this.value = this.value.replace(/[^@a-zA-Z0-9_]/g, '')" inputmode="latin"
+                  placeholder="@ivan_owner" name="telegram-solo" required class="q-inp-field">
               </div>
               <div class="form__bot">
                 <button type="submit" class="form-btn  btn black-btn w-100 submit-btn-solo">
-                 <span class="subm-txt"> Зарегаться </span>
-                  <svg class="loading-spinn" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+                  <span class="subm-txt"> Зарегаться </span>
+                  <svg class="loading-spinn" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 48 48">
                     <g fill="none">
                       <path id="track" fill="rgba(255, 255, 255, 0.5)"
                         d="M24,48 C10.745166,48 0,37.254834 0,24 C0,10.745166 10.745166,0 24,0 C37.254834,0 48,10.745166 48,24 C48,37.254834 37.254834,48 24,48 Z M24,44 C35.045695,44 44,35.045695 44,24 C44,12.954305 35.045695,4 24,4 C12.954305,4 4,12.954305 4,24 C4,35.045695 12.954305,44 24,44 Z">
@@ -720,20 +725,22 @@
             </form>
 
             <div class="q-last">
-          <svg class="loading-spinner" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 48 48">
-            <g fill="none">
-              <path id="track" fill="rgba(28, 28, 28, 0.03)"
-                d="M24,48 C10.745166,48 0,37.254834 0,24 C0,10.745166 10.745166,0 24,0 C37.254834,0 48,10.745166 48,24 C48,37.254834 37.254834,48 24,48 Z M24,44 C35.045695,44 44,35.045695 44,24 C44,12.954305 35.045695,4 24,4 C12.954305,4 4,12.954305 4,24 C4,35.045695 12.954305,44 24,44 Z" />
-              <path id="section" fill="rgba(131, 218, 78, 1)"
-                d="M24,0 C37.254834,0 48,10.745166 48,24 L44,24 C44,12.954305 35.045695,4 24,4 L24,0 Z" />
-            </g>
-          </svg>
-         
+              <svg class="loading-spinner" xmlns="http://www.w3.org/2000/svg" width="120" height="120"
+                viewBox="0 0 48 48">
+                <g fill="none">
+                  <path id="track" fill="rgba(28, 28, 28, 0.03)"
+                    d="M24,48 C10.745166,48 0,37.254834 0,24 C0,10.745166 10.745166,0 24,0 C37.254834,0 48,10.745166 48,24 C48,37.254834 37.254834,48 24,48 Z M24,44 C35.045695,44 44,35.045695 44,24 C44,12.954305 35.045695,4 24,4 C12.954305,4 4,12.954305 4,24 C4,35.045695 12.954305,44 24,44 Z" />
+                  <path id="section" fill="rgba(131, 218, 78, 1)"
+                    d="M24,0 C37.254834,0 48,10.745166 48,24 L44,24 C44,12.954305 35.045695,4 24,4 L24,0 Z" />
+                </g>
+              </svg>
+
               <h2>
                 Заявка на рассмотрении
               </h2>
               <p>
-                Наш менеджер <a href="https://t.me/fbm_ivan" target="_blank" class="green-txt">@fbm_ivan</a> свяжется с вами в Telegram в ближайшее время
+                Наш менеджер <a href="https://t.me/fbm_ivan" target="_blank" class="green-txt">@fbm_ivan</a> свяжется с
+                вами в Telegram в ближайшее время
               </p>
               <a href="index.html" class="btn black-btn">На главную</a>
 

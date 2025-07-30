@@ -237,8 +237,6 @@ document.querySelector('.submit-btn-solo').addEventListener('click', async (even
   const requiredFields = formSolo.querySelectorAll('[required]');
   let allFieldsFilled = true;
 
-  document.querySelector('.loading-spinn').style.display = 'block';
-  document.querySelector('.subm-txt').style.display = 'none';
 
 
   // Проверяем, что все поля заполнены
@@ -247,13 +245,18 @@ document.querySelector('.submit-btn-solo').addEventListener('click', async (even
       allFieldsFilled = false;
       field.classList.add('error'); // Добавляем класс для визуального отображения ошибки
     } else {
+    
       field.classList.remove('error'); // Убираем класс ошибки, если поле заполнено
     }
   });
 
   if (!allFieldsFilled) {
-
     return;
+  }
+  else{
+    document.querySelector('.loading-spinn').style.display = 'block';
+    document.querySelector('.subm-txt').style.display = 'none';
+    document.querySelector('.submit-btn-solo').disabled = true;
   }
 
 
@@ -290,6 +293,12 @@ document.querySelector('.submit-btn-solo').addEventListener('click', async (even
       formSolo.style.display = 'none';
       document.querySelector('.q-last').style.display = 'flex';
       document.querySelector('.q-top').style.display = 'none';
+      setTimeout(() => {
+        window.location = 'index.html'
+      }, 10000);
+
+
+
     } else {
       console.log('Ошибка при отправке данных.');
     }
@@ -312,4 +321,5 @@ document.querySelectorAll('.q-inp-field').forEach((input) => {
       input.classList.add('error'); // Добавляем класс error
     }
   });
+
 });

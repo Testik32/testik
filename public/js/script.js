@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTrigger: {
       trigger: '.vect-shield', // Элемент, который активирует анимацию
       start: 'top 70%', // Начало анимации (20% экрана)
-
-      toggleActions: 'play reverse play reverse', // Действия при скролле
+      toggleActions: 'play none none none', // Действия при скролле
       toggleClass: "active",
+      once: true,
     },
 
 
@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.to(relGal, {
     y: -50,
     duration: 0.8,
-
     scrollTrigger: {
       trigger: '.vect-gal', // Элемент, который активирует анимацию
       start: 'top 80%', // Начало анимации (20% экрана)
-      toggleActions: 'play reverse play reverse', // Действия при скролле
+      toggleActions: 'play none none none', // Действия при скролле
       toggleClass: "active",
+      once: true,
     },
   });
 
@@ -103,17 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  gsap.to(relGal, {
-    y: -50,
-    duration: 0.8,
 
-    scrollTrigger: {
-      trigger: '.vect-gal', // Элемент, который активирует анимацию
-      start: 'top 80%', // Начало анимации (20% экрана)
-      toggleActions: 'play reverse play reverse', // Действия при скролле
-      toggleClass: "active",
-    },
-  });
 
 
 
@@ -132,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger: '.apple-pay', // Элемент, который активирует анимацию
       start: 'top 70%', // Начало анимации (20% экрана)
 
-      toggleActions: 'play reverse play reverse', // Действия при скролле
+      toggleActions: 'play none none none', // Действия при скролле
     },
   })
     .to(apPayBgRects, {
@@ -212,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger: '.teleg', // Элемент, который активирует анимацию
       start: 'top 70%', // Начало анимации (20% экрана)
 
-      toggleActions: 'play reverse play reverse', // Действия при скролле
+      toggleActions: 'play none none none', // Действия при скролле
     },
   })
     .to(telegBotIco, {
@@ -255,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger: '.comand', // Элемент, который активирует анимацию
       start: 'top 80%', // Начало анимации (20% экрана)
       end: 'bottom 10%', // Конец анимации
-      toggleActions: 'play reverse play reverse', // Действия при скролле
+      toggleActions: 'play none none none', // Действия при скролле
       onLeave: () => {
         resetValues(member2Val); // Сброс значения member2-val
         resetValues(member3Val); // Сброс значения member3-val
