@@ -7,6 +7,17 @@ function openBurg() {
 
 
 
+const expanded = false;
+const accordionBtn = document.querySelector('.accord-btn');
+
+accordionBtn.addEventListener('click', () => {
+  if (expanded) {
+    document.querySelector('[data-accordion-animate="collapse"]').beginElement();
+  } else {
+    document.querySelector('[data-accordion-animate="expand"]').beginElement();
+  }
+});
+
 
 function toggleFaq(button) {
   const answer = button.nextElementSibling;
@@ -17,10 +28,13 @@ function toggleFaq(button) {
   if (!isActive) {
     answer.classList.add('active');
     button.classList.add('active');
+    button.querySelector('[data-accordion-animate="expand"]').beginElement();
+
   }
   else {
     answer.classList.remove('active');
     button.classList.remove('active');
+    button.querySelector('[data-accordion-animate="collapse"]').beginElement();
   }
 }
 
