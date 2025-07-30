@@ -12,12 +12,12 @@ html {
   --main-color: rgba(28, 28, 28, 1);
   --color-bg1: rgb(8, 10, 15);
   --color-bg2: rgb(0, 17, 32);
-  --color1: 84, 172, 184;
+  --color1: 10, 97, 0;
   --color2: 65, 184, 86;
   --color3: 131, 218, 78;
   --color4: 84, 172, 184;
   --color5: 131, 218, 78;
-  --color-interactive: 10, 97, 0;
+  --color-interactive: 84, 172, 184;
   --circle-size: 80%;
   --blending: hard-light;
 
@@ -149,11 +149,12 @@ header {
 }
 
 .header-logo {
-  max-width: 155px;
+  width: 25%;
 }
 
 .header-logo img {
   width: 100%;
+  max-width: 155px;
 }
 
 .header__nav {
@@ -1826,6 +1827,11 @@ footer {
   gap: 4px;
 }
 
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 
 .q-form {
   display: none;
@@ -1950,6 +1956,10 @@ footer {
 }
 
 
+.loading-spinn {
+  display: none;
+  animation: loading-spinner 1.5s linear infinite
+}
 
 @keyframes loading-spinner {
   from {
@@ -2534,5 +2544,14 @@ footer {
 
   .comand-bot {
     height: 202px;
+  }
+
+  .header-logo {
+    width: auto;
+  }
+
+  .header-logo img {
+    width: 100%;
+    max-width: 155px;
   }
 }

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     2: 'Какой у вас ежемесячный расход на рекламу?',
     3: 'Вы команда или соло?',
     4: 'Как вы узнали про нас?',
-    5: 'Давайте знакомиться <br> <span class="q-subtitle"> Расскажите о себе и наш менеджер свяжется с вами для подтверждения регистрации в течение 15 минут.</span>' ,
+    5: 'Давайте знакомиться <br> <span class="q-subtitle"> Расскажите о себе и наш менеджер свяжется с вами для подтверждения регистрации в течение 15 минут.</span>',
     6: 'Давайте знакомиться <br> <span class="q-subtitle"> Расскажите о себе и наш менеджер свяжется с вами для подтверждения регистрации в течение 15 минут.</span>'
   };
 
@@ -207,8 +207,8 @@ document.querySelector('.submit-btn').addEventListener('click', async (event) =>
 
     const result = await response.json();
     if (result.status === 'success') {
-      formTeam.style.display='none';
-      document.querySelector('.q-last').style.display='flex';
+      formTeam.style.display = 'none';
+      document.querySelector('.q-last').style.display = 'flex';
       document.querySelector('.q-top').style.display = 'none';
       console.log('Данные успешно отправлены!');
     } else {
@@ -235,6 +235,10 @@ document.querySelector('.submit-btn-solo').addEventListener('click', async (even
   const requiredFields = formSolo.querySelectorAll('[required]');
   let allFieldsFilled = true;
 
+  document.querySelector('.loading-spinn').style.display = 'block';
+  document.querySelector('.subm-txt').style.display = 'none';
+
+
   // Проверяем, что все поля заполнены
   requiredFields.forEach((field) => {
     if (!field.value.trim()) {
@@ -246,7 +250,7 @@ document.querySelector('.submit-btn-solo').addEventListener('click', async (even
   });
 
   if (!allFieldsFilled) {
-   
+
     return;
   }
 
@@ -299,7 +303,7 @@ document.querySelectorAll('.q-inp-field').forEach((input) => {
 
     // Проверяем, проходит ли значение валидацию
     if (input.checkValidity()) {
-     input.classList.add('success'); // Добавляем класс success
+      input.classList.add('success'); // Добавляем класс success
       input.classList.remove('error'); // Убираем класс error, если он был
     } else {
       input.classList.remove('success'); // Убираем класс success
