@@ -320,10 +320,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   gsap.to('.ekr2', {
-    y: '600', // Поднимаем ekr2 вверх
-    ease: 'power2.out',
+    y: '400', // Поднимаем ekr2 вверх
+    ease: 'power1.out',
     scrollTrigger: {
-      trigger: '.faq', // Элемент, который активирует анимацию
+      trigger: '.conf', // Элемент, который активирует анимацию
       start: 'bottom bottom', // Когда нижняя часть hero касается нижней части экрана
       end: 'bottom top', // Когда нижняя часть hero касается верхней части экрана
       scrub: true, // Плавная анимация при скролле
