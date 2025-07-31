@@ -762,12 +762,12 @@ header {
 
 .platf-txt h2 {
   color: white;
-
+  text-align: center;
 }
 
 .platf-txt h3 {
   color: rgba(255, 255, 255, 0.25);
-
+  text-align: center;
   margin-top: 10px;
 }
 
@@ -2107,8 +2107,8 @@ footer {
   }
 
   .hero__top {
-   margin-top: auto;
-   margin-bottom: auto;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .conf {
@@ -2780,4 +2780,29 @@ footer {
     display: block;
   }
 
+  .platf-txt h2 {
+
+    text-align: left;
+  }
+
+  .platf-txt h3 {
+
+    text-align: left;
+
+  }
+  .tarifs__col{
+    height: 480px;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content !important;
 }

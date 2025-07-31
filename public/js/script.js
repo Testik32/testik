@@ -150,15 +150,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// document.addEventListener('DOMContentLoaded', () => {
+//   if (window.innerWidth < 767) {
+//     $('.tarifs__table').slick({
+//       infinite: false,
+//       slidesToShow: 2,
+//       slidesToScroll: 1,
+//       arrows: false,
+//       dots: false,
+
+//     });
+//   }
+// });
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth < 767) {
-    $('.tarifs__table').slick({
-      infinite: false,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: false,
-      variableWidth: true,
+    const tarifsTable = document.querySelector('.tarifs__table');
+
+    // Добавляем структуру Swiper
+    tarifsTable.classList.add('swiper');
+    tarifsTable.innerHTML = `
+      <div class="swiper-wrapper">
+        ${Array.from(tarifsTable.children).map(child => `<div class="swiper-slide">${child.outerHTML}</div>`).join('')}
+      </div>
+    `;
+
+    // Инициализация Swiper
+    const swiper = new Swiper('.tarifs__table', {
+      slidesPerView: 2,
+      spaceBetween: 70,
+      pagination: false,
+
+     
     });
   }
 });
@@ -166,25 +194,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const interBubble = document.querySelector('.interactive');
-  let curX = 0;
-  let curY = 0;
-  let tgX = 0;
-  let tgY = 0;
 
-  const move = () => {
-    curX += (tgX - curX) / 20;
-    curY += (tgY - curY) / 20;
-    interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-    requestAnimationFrame(move);
-  };
 
-  window.addEventListener('mousemove', (event) => {
-    tgX = event.clientX;
-    tgY = event.clientY;
-  });
+  if (window.innerWidth > 767) {
 
-  move();
+    const interBubble = document.querySelector('.interactive');
+    let curX = 0;
+    let curY = 0;
+    let tgX = 0;
+    let tgY = 0;
+
+    const move = () => {
+      curX += (tgX - curX) / 20;
+      curY += (tgY - curY) / 20;
+      interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+      requestAnimationFrame(move);
+    };
+
+    window.addEventListener('mousemove', (event) => {
+      tgX = event.clientX;
+      tgY = event.clientY;
+    });
+
+    move();
+  }
 });
 
 
@@ -354,8 +387,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 
