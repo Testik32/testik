@@ -334,6 +334,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (window.innerWidth < 767) {
+
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
+    function fix100vh() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    fix100vh();
+    window.addEventListener('resize', fix100vh);
+
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
+
+    if (window.innerWidth < 767) {
+      gsap.to('.hero', {
+        y: '200',
+        ease: 'power1.out',
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'bottom bottom+=200',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+    }
+
+
+
+
+
     gsap.to('.hero', {
       y: '200', // Поднимаем ekr2 вверх
       ease: 'power1.out',

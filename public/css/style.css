@@ -2072,6 +2072,7 @@ footer {
   .cards__inner {
     gap: 60px;
   }
+
   .bigger__elems {
     justify-content: center;
   }
@@ -2471,7 +2472,8 @@ footer {
 
   .tarifs__col h4 {
     font-size: 17px;
-    white-space: nowrap;height: 36px;
+    white-space: nowrap;
+    height: 36px;
   }
 
   .faq__inner {
@@ -2686,5 +2688,30 @@ footer {
   .header-logo img {
     width: 100%;
     max-width: 155px;
+  }
+
+
+
+
+
+  .q-top h3 {
+    font-size: 32px;
+  }
+
+  .q-answer-l span {
+    font-size: 18px;
+  }
+
+  .q-answer {
+    padding: 10px 20px;
+  }
+
+  .noico .q-answer{
+    padding: 15px 20px;
+  }
+  .q-last h2{
+    font-size: 40px;
+    max-width: 80%;
+    line-height: 1.3;
   }
 }
