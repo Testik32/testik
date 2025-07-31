@@ -342,8 +342,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    gsap.to('.hero', {
-      y: '300',
+    gsap.to('.hero__image', {
+      y: '200',
       ease: 'power1.out',
       scrollTrigger: {
         trigger: '.hero',

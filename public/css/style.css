@@ -762,12 +762,12 @@ header {
 
 .platf-txt h2 {
   color: white;
-  text-align: center;
+
 }
 
 .platf-txt h3 {
   color: rgba(255, 255, 255, 0.25);
-  text-align: center;
+
   margin-top: 10px;
 }
 
@@ -2107,7 +2107,8 @@ footer {
   }
 
   .hero__top {
-    margin-top: 5px;
+   margin-top: auto;
+   margin-bottom: auto;
   }
 
   .conf {
@@ -2158,7 +2159,7 @@ footer {
   .footer__reg {
     flex-direction: column-reverse;
     align-items: flex-start;
-    gap: 40px;
+    gap: 20px;
     padding: 24px 16px;
   }
 
@@ -2209,7 +2210,7 @@ footer {
   .burger {
     display: flex;
     flex-direction: column;
-    width: 28px;
+    width: 38px;
     gap: 3px;
     padding: 4px 6px;
   }
