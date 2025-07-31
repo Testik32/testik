@@ -306,30 +306,45 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
 
 
+  if (window.innerWidth > 767) {
+    gsap.to('.hero', {
+      y: '300', // Поднимаем ekr2 вверх
+      ease: 'power1.out',
+      scrollTrigger: {
+        trigger: '.hero', // Элемент, который активирует анимацию
+        start: 'bottom bottom', // Когда нижняя часть hero касается нижней части экрана
+        end: 'bottom top', // Когда нижняя часть hero касается верхней части экрана
+        scrub: true, // Плавная анимация при скролле
+      },
+    });
+  }
 
-  gsap.to('.hero', {
-    y: '300', // Поднимаем ekr2 вверх
-    ease: 'power1.out',
-    scrollTrigger: {
-      trigger: '.hero', // Элемент, который активирует анимацию
-      start: 'bottom bottom', // Когда нижняя часть hero касается нижней части экрана
-      end: 'bottom top', // Когда нижняя часть hero касается верхней части экрана
-      scrub: true, // Плавная анимация при скролле
-    },
-  });
+  if (window.innerWidth > 767) {
+    gsap.to('.ekr2', {
+      y: '400', // Поднимаем ekr2 вверх
+      ease: 'power1.out',
+      scrollTrigger: {
+        trigger: '.conf', // Элемент, который активирует анимацию
+        start: 'bottom bottom', // Когда нижняя часть hero касается нижней части экрана
+        end: 'bottom top', // Когда нижняя часть hero касается верхней части экрана
+        scrub: true, // Плавная анимация при скролле
+      },
+    });
 
+  }
 
-  gsap.to('.ekr2', {
-    y: '400', // Поднимаем ekr2 вверх
-    ease: 'power1.out',
-    scrollTrigger: {
-      trigger: '.conf', // Элемент, который активирует анимацию
-      start: 'bottom bottom', // Когда нижняя часть hero касается нижней части экрана
-      end: 'bottom top', // Когда нижняя часть hero касается верхней части экрана
-      scrub: true, // Плавная анимация при скролле
-    },
-  });
-
+  if (window.innerWidth < 767) {
+    gsap.to('.hero', {
+      y: '200', // Поднимаем ekr2 вверх
+      ease: 'power1.out',
+      scrollTrigger: {
+        trigger: '.hero', // Элемент, который активирует анимацию
+        start: 'bottom bottom+=200', // Когда нижняя часть hero касается нижней части экрана
+        end: 'bottom top', // Когда нижняя часть hero касается верхней части экрана
+        scrub: true, // Плавная анимация при скролле
+      },
+    });
+  }
 
 });
 

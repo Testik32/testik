@@ -2020,7 +2020,8 @@ footer {
   height: 100%;
   background: linear-gradient(180deg, rgba(24, 144, 255, 0) 65%, rgba(65, 184, 86, 1) 100%);
 }
-.conf-title{
+
+.conf-title {
   position: absolute;
   bottom: 6%;
   left: 5%;
@@ -2041,7 +2042,9 @@ footer {
 
 
 
-
+.dark-bg {
+  background: rgba(28, 28, 28, 1);
+}
 
 
 
@@ -2066,22 +2069,54 @@ footer {
 
 
 @media(max-width:767px) {
-  .conf{
+  .cards__inner {
+    gap: 60px;
+  }
+  .bigger__elems {
+    justify-content: center;
+  }
+
+  .bigger__elem {
+    width: 90%;
+  }
+
+  .why__elems {
+    justify-content: center;
+  }
+
+  .why__elem {
+    width: 90%;
+  }
+
+  .cards__inner h1 {
+    text-align: center;
+  }
+
+  .hero__top {
+    margin-top: 50px;
+  }
+
+  .conf {
     padding: 100px 0;
   }
-  .conf__inner{
+
+  .conf__inner {
     gap: 40px;
   }
-  .conf__images{
-   flex-direction: column;
-   gap: 30px;
+
+  .conf__images {
+    flex-direction: column;
+    gap: 30px;
   }
-  .conf__images img{
+
+  .conf__images img {
     height: 500px;
   }
-  .conf-elem{
+
+  .conf-elem {
     width: 100%;
   }
+
   .registr .content {
     height: auto;
   }
@@ -2435,8 +2470,8 @@ footer {
   }
 
   .tarifs__col h4 {
-    font-size: 20px;
-    white-space: nowrap;
+    font-size: 17px;
+    white-space: nowrap;height: 36px;
   }
 
   .faq__inner {
@@ -2552,7 +2587,7 @@ footer {
 
   .slick-track {
     display: flex !important;
-    gap: 90px !important;
+    gap: 70px !important;
     position: relative;
     height: 544px !important;
     width: 100%;
