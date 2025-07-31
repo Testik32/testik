@@ -2792,6 +2792,11 @@ footer {
   }
   .tarifs__col{
     height: 480px;
+    width: 124px;
+   
+  }
+  .tarifs__col.large{
+    width: 200px;
   }
 }
 
@@ -2804,5 +2809,5 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content !important;
+width: fit-content !important;
 }

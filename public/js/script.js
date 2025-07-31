@@ -183,10 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Инициализация Swiper
     const swiper = new Swiper('.tarifs__table', {
       slidesPerView: 2,
-      spaceBetween: 70,
+      spaceBetween: 40,
       pagination: false,
+      cssMode: true,
 
-     
     });
   }
 });
