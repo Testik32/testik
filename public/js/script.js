@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth < 767) {
     $('.tarifs__table').slick({
       infinite: false,
-      slidesToShow: 1,
+      slidesToShow: 2,
       slidesToScroll: 1,
       arrows: false,
       dots: false,
@@ -335,46 +335,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (window.innerWidth < 767) {
 
-ScrollTrigger.config({ ignoreMobileResize: true });
+    ScrollTrigger.config({ ignoreMobileResize: true });
 
-function fix100vh() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-fix100vh();
-window.addEventListener('resize', fix100vh);
-
-window.addEventListener('load', () => {
-  ScrollTrigger.refresh();
-});
-
-if (window.innerWidth < 767) {
-  gsap.to('.hero', {
-    y: '200',
-    ease: 'power1.out',
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'bottom bottom+=200',
-      end: 'bottom top',
-      scrub: true,
-    },
-  });
-}
-
-
-
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
 
 
     gsap.to('.hero', {
-      y: '200', // Поднимаем ekr2 вверх
+      y: '300',
       ease: 'power1.out',
       scrollTrigger: {
-        trigger: '.hero', // Элемент, который активирует анимацию
-        start: 'bottom bottom+=200', // Когда нижняя часть hero касается нижней части экрана
-        end: 'bottom top', // Когда нижняя часть hero касается верхней части экрана
-        scrub: true, // Плавная анимация при скролле
+        trigger: '.hero',
+        start: 'center-=100 top',
+        end: 'bottom top',
+        scrub: true,
       },
     });
+
+
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+
+
+
   }
 
 });
