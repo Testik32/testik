@@ -2094,7 +2094,7 @@ footer {
   }
 
   .hero__top {
-    margin-top: 50px;
+    margin-top: 5px;
   }
 
   .conf {
@@ -2205,7 +2205,7 @@ footer {
   }
 
   .hero {
-    height: 100dvh;
+    height: calc(var(--vh, 1vh) * 100);
   }
 
   .hero__main {
@@ -2706,10 +2706,11 @@ footer {
     padding: 10px 20px;
   }
 
-  .noico .q-answer{
+  .noico .q-answer {
     padding: 15px 20px;
   }
-  .q-last h2{
+
+  .q-last h2 {
     font-size: 40px;
     max-width: 80%;
     line-height: 1.3;
