@@ -232,7 +232,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 78px;
+  max-width: 77px;
   transition: all .3s;
   opacity: 0;
   padding: 0 2px;
@@ -257,7 +257,7 @@ header {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 4px 8px;
+  padding: 4px 6px;
   transition: all .3s;
   border-radius: 100px;
   width: 100%;
@@ -374,9 +374,7 @@ header {
   opacity: 0.92;
 }
 
-.mob {
-  display: none;
-}
+
 
 .hero__top {
   display: flex;
@@ -1990,7 +1988,7 @@ footer {
 
 .conf {
   padding: 160px 0;
-  padding-bottom: 200px;
+  padding-bottom: 250px;
 }
 
 .conf__inner {
@@ -2062,7 +2060,9 @@ footer {
   display: block;
 }
 
-
+.mob {
+  display: none;
+}
 
 
 
@@ -2828,8 +2828,15 @@ footer {
   .tarifs__inner {
     gap: 40px;
   }
-
-
+.cards__elems{
+  justify-content: center;
+}
+  .cards__elem{
+    width: 90%;
+    padding: 32px 24px;
+    padding-top: 0;
+    border-radius: 40px;
+  }
 }
 
 

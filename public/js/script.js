@@ -41,13 +41,13 @@ function toggleFaq(button) {
     answer.classList.add('active');
     button.classList.add('active');
     button.querySelector('[data-accordion-animate="expand"]').beginElement();
-
+    ScrollTrigger.refresh();
   }
   else {
     answer.classList.remove('active');
     button.classList.remove('active');
     button.querySelector('[data-accordion-animate="collapse"]').beginElement();
-
+    ScrollTrigger.refresh();
   }
 }
 
@@ -205,12 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   if (window.innerWidth > 767) {
-    gsap.to('.ekr2', {
+    gsap.to('.conf', {
       y: 400,
       ease: 'power1.out',
       scrollTrigger: {
         trigger: '.conf',
-        start: 'bottom bottom',
+        start: 'top top',
         end: 'bottom top',
         scrub: true,
       },
