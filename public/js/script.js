@@ -19,6 +19,18 @@ accordionBtn.addEventListener('click', () => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 function toggleFaq(button) {
   const answer = button.nextElementSibling;
   const isActive = answer.classList.contains('active');
@@ -35,6 +47,7 @@ function toggleFaq(button) {
     answer.classList.remove('active');
     button.classList.remove('active');
     button.querySelector('[data-accordion-animate="collapse"]').beginElement();
+
   }
 }
 
@@ -170,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth < 767) {
-    const tarifsTable = document.querySelector('.tarifs__table');
+    const tarifsTable = document.querySelector('.tarifs__slider');
 
     // Добавляем структуру Swiper
     tarifsTable.classList.add('swiper');
@@ -181,14 +194,38 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     // Инициализация Swiper
-    const swiper = new Swiper('.tarifs__table', {
-      slidesPerView: 2,
-      spaceBetween: 40,
+    const swiper = new Swiper('.tarifs__slider', {
+      slidesPerView: 'auto',
+      spaceBetween: 45,
       pagination: false,
       cssMode: true,
 
     });
   }
+
+
+  if (window.innerWidth > 767) {
+    gsap.to('.ekr2', {
+      y: 400,
+      ease: 'power1.out',
+      scrollTrigger: {
+        trigger: '.conf',
+        start: 'bottom bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
+    });
+
+  }
+
+
+
+
+
+
+
+
+
 });
 
 
@@ -205,8 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let tgY = 0;
 
     const move = () => {
-      curX += (tgX - curX) / 20;
-      curY += (tgY - curY) / 20;
+      curX += (tgX - curX) / 10;
+      curY += (tgY - curY) / 10;
       interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
       requestAnimationFrame(move);
     };
@@ -352,19 +389,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (window.innerWidth > 767) {
-    gsap.to('.ekr2', {
-      y: '400', // Поднимаем ekr2 вверх
-      ease: 'power1.out',
-      scrollTrigger: {
-        trigger: '.conf', // Элемент, который активирует анимацию
-        start: 'bottom bottom', // Когда нижняя часть hero касается нижней части экрана
-        end: 'bottom top', // Когда нижняя часть hero касается верхней части экрана
-        scrub: true, // Плавная анимация при скролле
-      },
-    });
 
-  }
+
+
 
   if (window.innerWidth < 767) {
 

@@ -1046,7 +1046,7 @@ header {
 }
 
 .cards__elem {
-  box-shadow: 0px 2px 16px 0px rgba(23, 30, 65, 0.05);
+  box-shadow: 0px 2px 16px 0px rgba(23, 30, 65, 0.12);
   padding: 60px 40px;
   border-radius: 60px;
   height: 647px;
@@ -1990,6 +1990,7 @@ footer {
 
 .conf {
   padding: 160px 0;
+  padding-bottom: 200px;
 }
 
 .conf__inner {
@@ -2148,6 +2149,7 @@ footer {
   .header__reg .btn {
     font-size: 16px;
     line-height: 1.1;
+    padding: 7.5px 13px;
   }
 
   .q-inner {
@@ -2629,7 +2631,7 @@ footer {
   }
 
   .table-hr {
-    top: 264px;
+    top: 221px;
   }
 
   .tarifs__table {
@@ -2718,7 +2720,7 @@ footer {
     width: auto;
   }
 
-  .header-logo img {
+  .header-logo svg {
     width: 100%;
     max-width: 155px;
   }
@@ -2790,15 +2792,62 @@ footer {
     text-align: left;
 
   }
-  .tarifs__col{
+
+  .tarifs__col {
     height: 480px;
     width: 124px;
-   
+
   }
-  .tarifs__col.large{
+
+  .tarifs__col.large {
     width: 200px;
   }
+
+  .header__r.mob .lang__switch {
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 6px;
+    border-radius: 100px;
+    background: rgb(237 237 237);
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
+    transition: all .4s;
+  }
+
+  .header__r.mob .lang__switch span {
+    font-size: 12px;
+  }
+
+  .header__r.mob .lang-an-c span {
+    font-size: 12px;
+  }
+
+  .tarifs__inner {
+    gap: 40px;
+  }
+
+
 }
+
+
+
+@media(max-width:395px) {
+  .header__r.mob .lang-cont {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 .swiper {
   width: 100%;
@@ -2809,5 +2858,5 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-width: fit-content !important;
+  width: fit-content !important;
 }
