@@ -1970,6 +1970,7 @@ footer {
 
 .footer__reg-r .lang__switch {
   margin-right: 0;
+  padding: 7px 8px;
 }
 
 
@@ -2828,10 +2829,12 @@ footer {
   .tarifs__inner {
     gap: 40px;
   }
-.cards__elems{
-  justify-content: center;
-}
-  .cards__elem{
+
+  .cards__elems {
+    justify-content: center;
+  }
+
+  .cards__elem {
     width: 90%;
     padding: 32px 24px;
     padding-top: 0;
